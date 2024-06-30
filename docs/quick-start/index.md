@@ -4,7 +4,7 @@ This page will outline the fastest way to get Confab up and running on your webs
 
 ## What You Need
 
-Confab backend requires a server to run on. Most OSs and architectures are supported(1); we provide native builds and scripts for Debian-based linux distributions. Additionally, you will need some way to execute commands on your server, e.g. SSH.
+Confab backend requires a server to run on. Most OSs and architectures are supported(1); we provide native builds for several platforms, and scripts for x64 Debian-based linux distributions. Additionally, you will need some way to execute commands on your server, e.g. SSH.
 { .annotate }
 
 1.  Confab backend is written in ASP.NET Core, and can run on Linux, Windows, macOS, and more.
@@ -16,12 +16,11 @@ You will also require SMTP credentials from an email provider. This is a mandato
 === "Auto-install Script"
 
     **Natively supported OS only (`linux-x64`)**
+    
+    Copy and paste the code below into your terminal(1)
+    { .annotate }
 
-    1. `cd` to the directory that you want to install Confab (subfolder `./Confab` will be created automatically)
-    2. Copy and paste the code below into your terminal(1)
-        { .annotate }
-
-        1.  Executing unknown scripts from the internet like this is bad practice, we recommend that you read [the script below](https://github.com/{{variables.CONFAB_GITHUB_LOCATION}}/blob/prod/scripts/autoinstall.sh){:target="_blank"} yourself and verify that it does what you want
+    1.  Executing unknown scripts from the internet like this is bad practice, we recommend that you read [the script below](https://github.com/{{variables.CONFAB_GITHUB_LOCATION}}/blob/prod/scripts/autoinstall.sh){:target="_blank"} yourself and verify that it does what you want
 
     ```bash
     sudo bash -c "$(curl https://raw.githubusercontent.com/{{variables.CONFAB_GITHUB_LOCATION}}/prod/scripts/autoinstall.sh)"
