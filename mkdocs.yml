@@ -68,7 +68,7 @@ theme:
     - search.suggest
     - toc.follow
 
-edit_uri: https://github.com/nextguyover/Confab-Docs/edit/main/docs/
+edit_uri: https://github.com/nextguyover/Confab-Docs/blob/main/docs/
 
 markdown_extensions:
   - attr_list
