@@ -3,7 +3,7 @@
 Confab sends emails to users for authentication and various other notification scenarios. All the different types of emails that are sent by Confab are listed below.
 
 !!! tip
-    Sending emails has some risks for spam generation. See [Abuse Mitigation](../../admin-guide/abuse-mitigation/#email-spam) for more information.
+    Sending emails has some risks for spam generation. See [Abuse Mitigation](../../admin-guide/abuse-mitigation/index.md#email-spam) for more information.
 
 ## Types of Emails
 

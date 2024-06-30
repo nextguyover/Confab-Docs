@@ -20,13 +20,13 @@ If you want to be certain that any content that you do not deem acceptable will 
 
 Users are able to set custom usernames which replace the default randomly generated username. Admins do not have any moderation functionality for custom usernames beyond banning offending users. 
 
-As such, if you prefer, custom usernames can be disabled altogether using the [backend configuration](../../config/#custom-usernames).
+As such, if you prefer, custom usernames can be disabled altogether using the [backend configuration](../../config/index.md#custom-usernames).
 
 ## Resource Abuse
 
 ### Comment Spam
 
-To prevent a bad actor from flooding your comments with spam, Confab has features to limit the number of comments that a user can post at one time. Two options are available, depending whether or not you have chosen to use the [Manual Moderation Queue](../../core-functionality/manual-moderation/).
+To prevent a bad actor from flooding your comments with spam, Confab has features to limit the number of comments that a user can post at one time. Two options are available, depending whether or not you have chosen to use the [Manual Moderation Queue](../../core-functionality/manual-moderation/index.md).
 
 
 === "Manual Moderation Enabled"
