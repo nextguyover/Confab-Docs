@@ -1,0 +1,3 @@
+# Confab Core Functionality
+
+This section outlines the usage of several core features of Confab, such as [Commenting](./comments/index.md), [Users](./users/index.md) and more...
