@@ -23,7 +23,7 @@ You will also require SMTP credentials from an email provider. This is a mandato
     1.  Executing unknown scripts from the internet like this is bad practice, we recommend that you read [the script below](https://github.com/{{variables.CONFAB_GITHUB_LOCATION}}/blob/prod/scripts/autoinstall.sh){:target="_blank"} yourself and verify that it does what you want
 
     ```bash
-    sudo bash -c "$(curl https://raw.githubusercontent.com/{{variables.CONFAB_GITHUB_LOCATION}}/prod/scripts/autoinstall.sh)"
+    sudo bash -c "$(curl -s https://raw.githubusercontent.com/{{variables.CONFAB_GITHUB_LOCATION}}/prod/scripts/autoinstall.sh)"
     ``` 
 === "Manual Install"
 
