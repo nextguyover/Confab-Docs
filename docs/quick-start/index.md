@@ -17,7 +17,7 @@ You will also require SMTP credentials from an email provider. This is a mandato
 
     **Natively supported OS only (`linux-x64`)**
     
-    Copy and paste the code below into your terminal(1)
+    Copy and paste the command below into your terminal(1)
     { .annotate }
 
     1.  Executing unknown scripts from the internet like this is bad practice, we recommend that you read [the script below](https://github.com/{{variables.CONFAB_GITHUB_LOCATION}}/blob/prod/scripts/autoinstall.sh){:target="_blank"} yourself and verify that it does what you want
@@ -25,6 +25,11 @@ You will also require SMTP credentials from an email provider. This is a mandato
     ```bash
     sudo bash -c "$(curl -s https://raw.githubusercontent.com/{{variables.CONFAB_GITHUB_LOCATION}}/prod/scripts/autoinstall.sh)"
     ``` 
+
+    !!! tip
+
+        This command can also be used to automatically update Confab!
+
 === "Manual Install"
 
     **Natively supported OS only (check GitHub releases)**
