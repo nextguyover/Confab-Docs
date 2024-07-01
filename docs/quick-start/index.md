@@ -51,7 +51,7 @@ You will also require SMTP credentials from an email provider. This is a mandato
 Open the `appsettings.json`(1) file with your favourite text editor. This is the Confab server configuration file. [Many configuration options](../config/index.md) are available, we will outline the minimal settings you need to get started.
 { .annotate }
 
-1. Same directory as your Confab executable. If you used the install script or did a manual install, this will be located at `Confab/appsettings.json`. If you compiled Confab yourself, this will be at `Confab/App/appsettings.json` 
+1. Same directory as your Confab executable. If you used the install script, this will be located at `/opt/confab/appsettings.json`. For a manual install: `Confab/appsettings.json`. If you compiled Confab yourself: `Confab/App/appsettings.json` 
 
 Firstly, edit the `ConfabParams` section
 
