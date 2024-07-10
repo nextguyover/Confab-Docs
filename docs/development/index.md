@@ -1,5 +1,33 @@
 # Confab Development
 
+## Setting Up Dev Environment
+
+### 1. Backend
+
+1. Clone this repo (and submodules) with `git clone https://github.com/{{variables.CONFAB_GITHUB_LOCATION}}.git --recursive`
+1. Initially compile email templates with `python3 Confab/email_designs/compile.py`
+1. Open `Confab/Confab.sln` in Visual Studio
+1. Open `appsettings.json` and set `ConfabParams:ExternalUrl` to "localhost", and enter an email address in `UserRoles:Admin`
+1. Start the program. If everything worked correctly, Swagger UI should be available at `http://localhost:2632/swagger/index.html`
+
+
+### 2. ConfabUI
+
+1. `cd` to the ConfabUI submodule directory
+1. Create a `.env` file in this directory and add the following
+```
+PUBLIC_API_URL="http://localhost:2632"
+```
+3. Start the dev server with `npm install && npm run dev`
+
+### 3. First Login
+
+1. Navigate to the frontend dev server URL (Default is `http://localhost:5173/`)
+1. Since current location has not yet been initialised, Confab will display an error. Ignore this and click "Go to login" in the top right of the widget
+1. Enter the email that you entered under `UserRoles:Admin` previously
+1. Since SMTP probably hasn't been configured yet, you can instead find the login code printed out to the Confab console. Use this to login
+1. Once successfully logged in, open the Admin Panel and initialise commenting at the current location
+
 ## Building Confab
 
 ### Prerequisites
