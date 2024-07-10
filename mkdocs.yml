@@ -67,6 +67,11 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+  logo: ../assets/docs.svg
+  favicon: ../assets/docs.svg
+
 
 edit_uri: https://github.com/nextguyover/Confab-Docs/blob/main/docs/
 
@@ -102,6 +107,9 @@ plugins:
   - markdownextradata: {}
   # - minify:
       # minify_html: true
+
+repo_name: nextguyover/Confab
+repo_url: https://github.com/nextguyover/Confab
 
 # Additional configuration
 extra:
