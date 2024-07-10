@@ -83,7 +83,7 @@ options:
     1. Change bash shell directory to the Email template folder (`Confab/email_designs`)
     2. Run UI build script
     ```bash
-    python3 build.py
+    python3 compile.py
     ```
 
 === "Manually"
