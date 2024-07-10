@@ -23,10 +23,10 @@ PUBLIC_API_URL="http://localhost:2632"
 ### 3. First Login
 
 1. Navigate to the frontend dev server URL (Default is `http://localhost:5173/`)
-1. Since current location has not yet been initialised, Confab will display an error. Ignore this and click "Go to login" in the top right of the widget
+1. Since current location has not yet been initialised, Confab will display an error. Ignore this and click "Go to login" in the top right of the widget.
 1. Enter the email that you entered under `UserRoles:Admin` previously
-1. Since SMTP probably hasn't been configured yet, you can instead find the login code printed out to the Confab console. Use this to login
-1. Once successfully logged in, open the Admin Panel and initialise commenting at the current location
+1. Since SMTP probably hasn't been configured yet, you can instead find the login code printed out to the Confab console. Use this to login.
+1. Once successfully logged in, open the Admin Panel and initialise commenting at the current location.
 
 ## Building Confab
 
