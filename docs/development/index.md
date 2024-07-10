@@ -4,7 +4,7 @@
 
 ### 1. Backend
 
-1. Clone this repo (and submodules) with `git clone https://github.com/{{variables.CONFAB_GITHUB_LOCATION}}.git --recursive`
+1. Clone the main Confab repo (and submodules) with `git clone https://github.com/{{variables.CONFAB_GITHUB_LOCATION}}.git --recursive`
 1. Initially compile email templates with `python3 Confab/email_designs/compile.py`
 1. Open `Confab/Confab.sln` in Visual Studio
 1. Open `appsettings.json` and set `ConfabParams:ExternalUrl` to "localhost", and enter an email address in `UserRoles:Admin`
