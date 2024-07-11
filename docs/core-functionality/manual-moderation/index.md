@@ -6,6 +6,9 @@ Confab features a Manual Moderation Queue that you can configure all(1) or some(
 1. Set all new comments to go to the Manual Moderation Queue by changing the [backend configuration](../../config/index.md#manual-moderation)
 2. Send select comments to the Manual Moderation Queue using [automoderation rules](../auto-moderation/index.md)
 
+!!! warning
+    Comment edits cannot be sent to the manual moderation queue. For selective moderation of edits, consider using [automoderation rules](../auto-moderation/index.md). Otherwise, edits can be disabled [globally](../../config/index.md#edits) or [locally](../../core-functionality/admin-panel/index.md#editing).
+
 !!! info
     The Manual Moderation Queue panel is only visible on the Confab UI frontend if an Admin is currently logged in.
 
