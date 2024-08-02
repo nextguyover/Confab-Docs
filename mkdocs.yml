@@ -25,6 +25,7 @@ nav:
     - config/index.md
   - Development:
     - development/index.md
+    - Database Schema Changes: development/database-schema-changes/index.md
   - About:
     - Design Philosophy: about/design.md
     - Future Roadmap: about/roadmap.md

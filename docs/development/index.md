@@ -1,5 +1,7 @@
 # Confab Development
 
+!!! info "This section of the documentation is intended for developers"
+
 ## Setting Up Dev Environment
 
 ### 1. Backend
