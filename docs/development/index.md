@@ -69,13 +69,16 @@ python3 ./Confab/confab-builder.py # (1)!
 
 1.  CLI Options:
 ```
-usage: confab_builder [-h] [-m {ui,backend,full}] [-c]
+usage: confab_builder [-h] [-m {ui,backend,full}] [-c] [-p PLATFORM] [-b]
 
 options:
-    -h, --help            show this help message and exit
-    -m {ui,backend,full}, --mode {ui,backend,full}
-                            Choose whether to build UI, backend, or both
-    -c, --clean           Clean build
+  -h, --help            show this help message and exit
+  -m {ui,backend,full}, --mode {ui,backend,full}
+                        Choose whether to build UI, backend, or both
+  -c, --clean           Clean build
+  -p PLATFORM, --platform PLATFORM
+                        Compile .NET backend for specific platform (leave empty for current platform).
+  -b, --bundle-runtime  Bundle .NET runtime (will run without requiring .NET runtime to be installed, but will increase build size)
 ```
         
 ### Option 2 - Build Manually

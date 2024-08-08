@@ -4,7 +4,7 @@ This page will outline the fastest way to get Confab up and running on your webs
 
 ## What You Need
 
-Confab backend requires a server to run on. Most OSs and architectures are supported(1); we provide native builds for several platforms, and scripts for x64 Debian-based linux distributions. Additionally, you will need some way to execute commands on your server, e.g. SSH.
+Confab backend requires a server to run on. Most OSs and architectures are supported(1); we provide a docker image, scripts for x64 Debian-based linux distributions and native builds for several platforms. Additionally, you will need some way to execute commands on your server, e.g. SSH.
 { .annotate }
 
 1.  Confab backend is written in ASP.NET Core, and can run on Linux, Windows, macOS, and more.
@@ -13,7 +13,15 @@ You will also require SMTP credentials from an email provider. This is a mandato
 
 ## Installation
 
-=== "Auto-install Script"
+=== "Docker"
+
+    Run the following command to download and start the Confab Docker container.
+
+    ```bash
+    docker run --name confab -v confab-db:/confab/Database -v confab-config:/confab-config -p 2632:2632 nextguyover/confab:latest
+    ```
+
+=== "Auto-install Script (Bare Metal)"
 
     **Natively supported OS only (`linux-x64`)**
     
@@ -30,7 +38,7 @@ You will also require SMTP credentials from an email provider. This is a mandato
 
         This command can also be used to automatically update Confab!
 
-=== "Manual Install"
+=== "Manual Install (Bare Metal)"
 
     **Natively supported OS only (check GitHub releases)**
 
@@ -51,7 +59,24 @@ You will also require SMTP credentials from an email provider. This is a mandato
 Open the `appsettings.json`(1) file with your favourite text editor. This is the Confab server configuration file. [Many configuration options](../config/index.md) are available, we will outline the minimal settings you need to get started.
 { .annotate }
 
-1. Same directory as your Confab executable. If you used the install script, this will be located at `/opt/confab/appsettings.json`. For a manual install: `Confab/appsettings.json`. If you compiled Confab yourself: `Confab/App/appsettings.json` 
+1. 
+    === "Docker"
+        Run this command to copy the file out of the container:
+        
+        ```bash
+        docker cp confab:/confab-config/appsettings.json ./appsettings.json
+        ```
+
+        Edit the file on your host system as required, then copy the file back into the container with:
+
+        ```bash
+        docker cp ./appsettings.json confab:/confab-config/appsettings.json
+        ```
+
+    === "Bare Metal"
+        The `appsettings.json` file is found in the same directory as your Confab executable. 
+
+        If you used the install script, this file will be located at `/opt/confab/appsettings.json`. For a manual install: `Confab/appsettings.json`. If you compiled Confab yourself: `Confab/App/appsettings.json` 
 
 Firstly, edit the `ConfabParams` section
 
@@ -80,23 +105,30 @@ Finally, scroll down to `UserRoles:Admin`, and add a string with your email addr
 
 ### Starting Confab
 
-Confab can be started by launching the `Confab` executable. To run Confab at system startup, a bash script has been provided to install Confab as a systemd service. Run the script with the following command.
+=== "Docker"
+    Restart the Docker container to apply your new `appsettings.json` file.
 
+    ```bash
+    docker restart confab
+    ```
 
-```bash
-sudo bash autostart-linux.bash --enable # (1)!
-```
-{ .annotate }
+=== "Bare Metal"
+    Confab can be started by launching the `Confab` executable. To run Confab at system startup, a bash script has been provided to install Confab as a systemd service. Run the script with the following command.
 
-1.  CLI Options:
-```
-Enable or disabled Confab autostart via systemd service. Confab excecutable must be in the same directory as this script.
-Usage: autostart-linux.bash [--enable|--disable]
+    ```bash
+    sudo bash autostart-linux.bash --enable # (1)!
+    ```
+    { .annotate }
 
-This script must be run with elevated privileges (sudo)
-```
+    1.  CLI Options:
+    ```
+    Enable or disabled Confab autostart via systemd service. Confab excecutable must be in the same directory as this script.
+    Usage: autostart-linux.bash [--enable|--disable]
 
-This will create the systemd service, start it, and provide instructions on how to optionally monitor the log output.
+    This script must be run with elevated privileges (sudo)
+    ```
+
+    This will create the systemd service, start it, and provide instructions on how to optionally monitor the log output.
 
 ### Exposing to Internet
 

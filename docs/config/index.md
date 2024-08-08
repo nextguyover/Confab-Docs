@@ -1,6 +1,26 @@
 # Backend Configuration Reference
 
-Confab's main configuration is done by editing the `appsettings.json` file, which will be found at the same location as your main Confab executable. This page provides a reference for the configuration file.
+Confab's main configuration is done by editing the `appsettings.json` file. The location of this file depends on your install method (1). 
+{ .annotate }
+
+1. 
+    === "Docker"
+        Run this command to copy the file out of the container:
+        
+        ```bash
+        docker cp confab:/confab-config/appsettings.json ./appsettings.json
+        ```
+
+        Edit the file on your host system as required, then copy the file back into the container with:
+
+        ```bash
+        docker cp ./appsettings.json confab:/confab-config/appsettings.json
+        ```
+
+    === "Bare Metal"
+        The `appsettings.json` file is found in the same directory as your Confab executable. 
+
+This page provides a reference for the configuration file.
 
 !!! note
     All of the following code snippets on this page are for the `appsettings.json` file. This will not be specified per-block.
