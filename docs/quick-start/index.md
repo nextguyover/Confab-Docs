@@ -18,7 +18,7 @@ You will also require SMTP credentials from an email provider. This is a mandato
     Run the following command to download and start the Confab Docker container.
 
     ```bash
-    docker run --name confab -v confab-db:/confab/Database -v confab-config:/confab-config -p 2632:2632 nextguyover/confab:latest
+    docker run --name confab -v confab-db:/confab/Database -v confab-config:/confab-config -p 2632:2632 --pull=always nextguyover/confab:latest
     ```
 
 === "Auto-install Script (Bare Metal)"
