@@ -4,7 +4,7 @@ This page will outline the fastest way to get Confab up and running on your webs
 
 ## What You Need
 
-Confab backend requires a server to run on. Most OSs and architectures are supported(1); we provide a docker image, scripts for x64 Debian-based linux distributions and native builds for several platforms. Additionally, you will need some way to execute commands on your server, e.g. SSH.
+Confab backend requires a server to run on. Most OSs and architectures are supported(1); we provide a Docker image, scripts for x64 Debian-based linux distributions and native builds for several platforms. Additionally, you will need some way to execute commands on your server, e.g. SSH.
 { .annotate }
 
 1.  Confab backend is written in ASP.NET Core, and can run on Linux, Windows, macOS, and more.
