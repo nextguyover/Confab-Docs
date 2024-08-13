@@ -41,6 +41,9 @@ To prevent a bad actor from flooding your comments with spam, Confab has feature
 
 Emails are [sent to users for various reasons](../../core-functionality/emails/index.md). To prevent your sending addresses being used for spam, and to prevent your SMTP quota being used up, Confab lets you set limits on the number of emails that can be sent.
 
-To prevent large numbers of login authentication code emails being sent (to email addresses that may not even belong to the user requesting the authentication code), use the [backend configuration](../../config/index.md#user-authentication-parameters) to set limits on the maximum number of consecutive auth code emails that can be sent.
+To prevent large numbers of login authentication code emails being sent (to email addresses that may not even belong to the user requesting the authentication code), use the [backend configuration](../../config/index.md#user-authentication-parameters) to set limits on both the maximum number of consecutive auth code emails that can be sent to a single address, and the maximum number of unfulfilled user sign ups (1).
+{ .annotate }
+
+1. New account creations where first auth code email has been sent to user, but user has not yet logged in. 
 
 Confab also sends reply notifications to users when their own comments receive replies. To prevent this feature being used to generate spam emails, you may choose to [turn this feature off](../../core-functionality/admin-panel/index.md#user-own-replies), or, implement measures to prevent comment spam, as outlined [above](#comment-spam).

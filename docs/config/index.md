@@ -185,8 +185,8 @@ Configure parameters related to the user authentication process and login authen
 2. Number of incorrect attempts before the one-time authentication code sent to a user's email is invalidated
 3. Maximum number of consecutive authentication code emails to send to a particular user. This value resets upon a successful login. See [abuse mitigation](../admin-guide/abuse-mitigation/index.md#email-spam) for more info.
 4. Cooldown hours duration to reset the unsuccessful verification code email count. See [abuse mitigation](../admin-guide/abuse-mitigation/index.md#email-spam) for more info.
-5. Maximum number of new user sign ups within a certain time duration. Set `-1` to disable limit.
-6. Maximum user sign up limit duration. Sign ups will be temporarily disabled if number of user sign ups within this duration is `>MaxNewSignups`.
+5. Maximum number of new user sign ups (with no logins) within a certain time duration. Set `-1` to disable limit. See [abuse mitigation](../admin-guide/abuse-mitigation/index.md#email-spam) for more info.
+6. Maximum user sign up limit duration. Sign ups will be temporarily disabled if number of user sign ups (without logins) within this duration is `>MaxNewSignups`. See [abuse mitigation](../admin-guide/abuse-mitigation/index.md#email-spam) for more info.
 
 ## Comment Settings
 
