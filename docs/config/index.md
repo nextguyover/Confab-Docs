@@ -222,7 +222,8 @@ Enabling manual moderation sends all new comments to the [Manual Moderation Queu
     "CommentSettings": {
         "Moderation": {
             "ManualModerationEnabled": true, //(1)!
-            "MaxModQueueCommentCountPerUser": 5 //(2)!
+            "ManualModerationEnabledOverrideForAnon": true, //(2)!
+            "MaxModQueueCommentCountPerUser": 5 //(3)!
         },
     }
 }
@@ -230,7 +231,8 @@ Enabling manual moderation sends all new comments to the [Manual Moderation Queu
 { .annotate }
 
 1. Set `false` to disable manual moderation
-2. Sets a limit on the maximum number of comments from any user that can be in the [Manual Moderation Queue](../core-functionality/manual-moderation/index.md) at one time. This option only applies if `"ManualModerationEnabled": true`. If you have an [Automoderation rule](../core-functionality/auto-moderation/index.md) that sends comments to the Manual Moderation Queue, this limit **will not be respected**.
+2. Overrides above value for anonymous users. If `true`, comments created by anonymous accounts will always go to moderation queue. If `false`, anonymous comments will follow same rules as authenticated accounts (i.e. value specified above in `ManualModerationEnabled`).
+3. Sets a limit on the maximum number of comments from any user that can be in the [Manual Moderation Queue](../core-functionality/manual-moderation/index.md) at one time. This option only applies if manual moderation is enabled. If you have an [Automoderation rule](../core-functionality/auto-moderation/index.md) that sends comments to the Manual Moderation Queue, this limit **will not be respected**.
 
 ### Edits
 
@@ -286,6 +288,41 @@ Specifies the RegEx used to convert a given URL location on your site to a locat
 
 !!! warning
     Changing this RegEx is not recommended, since several features, including comment links in emails, relies on the location being the pathname of the URL.
+
+## Anonymous Commenting
+
+Specifies settings related to the creation of anonymous user accounts, including rate limits and CAPTCHA configuration. See [Anonymous Users](../core-functionality/users/index.md#anonymous-users) to learn more about this feature.
+
+Visit [hCaptcha](https://www.hcaptcha.com/){:target="_blank"} to get your site key and secret key.
+
+```json
+{
+    "AnonymousCommenting": {
+        "Enabled": true, //(1)!
+        "AnonAccountCreationsPerIPLimit": 5, //(2)!
+        "AnonAccountCreationPerIPTimeDurationMins": 60, //(3)!
+        "hCaptcha": {
+            "Enabled": false, //(4)!
+            "AnonAccountCreationsPerIPCaptchaThreshold": 1, //(5)!
+            "SiteKey": "", //(6)!
+            "Secret": "" //(7)!
+        }
+    }
+}
+```
+{ .annotate }
+
+1. Enable or disable automatic creation of anonymous user accounts, allowing new guests to interact with comments without logging in
+2. Number of anonymous accounts that can be created per IP address, within a specified time duration
+3. Time duration in minutes for the anonymous account creation rate limit
+4. Set `true` to enable hCaptcha for anonymous account creation
+5. 
+    Number of anonymous accounts that can be created per IP address, within a specified time duration, before a CAPTCHA is required. 
+
+    Value must be less than the per IP limit value above. Set to `0` to require a CAPTCHA for every anonymous account creation.
+    
+6. hCaptcha site key
+7. hCaptcha secret key
 
 ## Custom Usernames
 

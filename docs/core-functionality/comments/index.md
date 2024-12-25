@@ -44,10 +44,11 @@ In addition to user functionality, Administrators are able to do the following t
 
     1. Learn more about [permanent deletion](#permanent-deletion)
 
-- :fontawesome-solid-user-slash: Ban/ :fontawesome-solid-user-plus: Unban user (1)
+- :fontawesome-solid-user-slash: Ban/ :fontawesome-solid-user-plus: Unban user (1) or :fontawesome-solid-users-slash: Ban/ :fontawesome-solid-users: Unban IP address (2)
     { .annotate }
 
     1. Learn more about [user bans](../users/index.md#bans)
+    2. Learn more about [anonymous users](../users/index.md#anonymous-users) and [IP address bans](../users/index.md#ip-address-bans)
 
 - :fontawesome-solid-dumpster-fire: Delete all user comments (1)
     { .annotate }

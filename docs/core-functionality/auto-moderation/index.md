@@ -30,3 +30,17 @@ The RegEx associated with each rule will be evaluated against all comment **crea
 If "Notify Admins if triggered" is ticked, an email will be sent to all Admins containing the rule that was triggered, and the comment contents that triggered the rule.
 
 *[RegEx]: Regular Expression
+
+## Actions
+
+When the contents of a new or edited comment matches the given RegEx, the following actions can be taken:
+
+- **Prevent Posting and Return Error Message**: When the user attempts to submit the comment, the comment will not be posted, and the user will receive your specified error message.
+- **Ban User**: User will be banned from posting further comments.
+- **Ban User and Delete All Comments**: User will be banned from posting further comments, and all of their existing comments will be deleted.
+- **Send to Manual Moderation Queue**: The comment will be sent to the Manual Moderation Queue for Admin approval (even if Manual Moderation is disabled).
+- **Notify Admins**: Notifies admins (same as the "Notify Admins if triggered" option).
+
+## Anonymous Comments
+
+Automoderation rules work for anonymous comments as well. However behaviour may differ slightly. For example, the ban action will ban the IP address of the anonymous user rather than the account.
