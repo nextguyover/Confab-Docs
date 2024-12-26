@@ -4,7 +4,10 @@
 
 Confab is a drop-in commenting solution that can be easily integrated into your website using a simple `<script>` tag.
 
-To create and vote for comments, visitors are required to be authenticated, using a one-time code sent to their email. Read more about this on our [design](../about/design.md#mandatory-authentication) page.
+Guests can create and vote on comments without logging in, removing any barriers for engagement and maximising user interaction on low-traffic sites. Additionally, passwordless login (using a one-time code sent via email) is supported, which enables additional features for users such as reply notifications. (1)
+{ .annotate }
+
+1. Read more about this on our [design](../about/design.md#authentication-flow) page.
 
 Confab consists of two separate parts, the [backend](#backend), and the [frontend](#confab-ui-frontend). The backend must be self-hosted by the user (e.g. on a VPS), and handles all server requirements, including storing user-generated data, and using SMTP to send emails for purposes such as user authentication and notifications.
 

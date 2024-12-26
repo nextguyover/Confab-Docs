@@ -1,12 +1,20 @@
 # Design Philosophy
 
-## Mandatory Authentication 
+## Authentication Flow
 
-Requiring user authentication to create or vote on comments was chosen to alleviate the possible abuse scenarios associated with anonymous commenting. If you are interested in anonymous commenting as a features, visit the [Confab Github repo](https://github.com/{{variables.CONFAB_GITHUB_LOCATION}}) and let us know. 
+Guests on your site can freely view any comments on your site. However, to perform any interactive actions such as voting on comments, or submitting new content, they must be logged in.
 
-During the design of Confab, every effort was taken to make the authentication process as frictionless for visitors as possible. 
+As soon as a new guest performs any action that requires authentication, the anonymous login process happens transparently in the background, allowing the guest to engage with comments frictionlessly. (1)
+{ .annotate }
 
-Upon entering an email address, a link is presented to take a visitor directly to their mailbox. Furthermore, in the authentication code email that users are sent, there is a direct link that can be clicked to navigate back to your site and automatically login to Confab. In a best-case scenario, the login process takes just 3 clicks. 
+1. A CAPTCHA may be presented if other visitors have logged in anonymously from the same IP address recently. Read more about [anonymous commenting](../core-functionality/users/index.md#anonymous-users), and learn how to configure this feature through the [backend config](../config/index.md#anonymous-commenting).
+
+To enable additional features such as comment reply notifications, a user must login with their email address. Confab was initially designed without anonymous commenting, hence, the email authentication flow was designed from the ground-up to be as frictionless for visitors as possible. 
+
+Upon entering an email address, a link is presented to take a visitor directly to their mailbox(1). Furthermore, in the authentication code email that users are sent, there is a direct link that can be clicked to navigate back to your site and automatically login to Confab. In a best-case scenario, the login process takes just 3 clicks. 
+{ .annotate }
+
+1. Jump to mailbox feature currently supports mail providers Gmail and Outlook 
 
 ## Passwordless Login
 
