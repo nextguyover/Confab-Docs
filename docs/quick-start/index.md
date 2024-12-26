@@ -164,7 +164,9 @@ Click "Go to login" on the top-right corner of the widget, and sign in with your
 
 Congratulations! 🎉 At this stage, you should have Confab working on your website. 
 
-As an Administrator, there are a few things that you should know. Hosting user generated content on your site can come with risks, so Confab provides tools such as [Automatic Moderation](../core-functionality/auto-moderation/index.md) and a [Manual Moderation Queue](../core-functionality/manual-moderation/index.md) to allow screening of user comments before they become visible on your site. 
+Anonymous commenting is enabled by default, we recommend [setting up CAPTCHA and rate limits](../config/index.md#anonymous-commenting) if you intend to continue using this feature.
+
+As an Administrator, there are a few more things that you should know. Hosting user generated content on your site can come with risks, so Confab provides tools such as [Automatic Moderation](../core-functionality/auto-moderation/index.md) and a [Manual Moderation Queue](../core-functionality/manual-moderation/index.md) to allow screening of user comments before they become visible on your site. 
 
 Furthermore, you should be aware of the [possible risks of allowing images](../admin-guide/content-risks/index.md#images) on your site, and [how images can be disabled](../admin-guide/content-risks/index.md#blocking-images).
 
