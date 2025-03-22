@@ -107,11 +107,14 @@ plugins:
   - search
   - awesome-pages
   - markdownextradata: {}
+  - social
   # - minify:
       # minify_html: true
 
 repo_name: nextguyover/Confab
 repo_url: https://github.com/nextguyover/Confab
+
+site_url: https://docs.confabcomments.com
 
 # Additional configuration
 extra:
